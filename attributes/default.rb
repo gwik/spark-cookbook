@@ -1,9 +1,41 @@
+default["chef"]["data_bag_secret_path"] = "/var/chef/encrypted_data_bag_secret"
+
 default["spark"]["master_host"] = "localhost"
+default["spark"]["master_port"] = "7077"
 default["spark"]["bin_url"] = "http://d3kbcqa49mib13.cloudfront.net/spark-1.0.1-bin-hadoop2.tgz"
 default["spark"]["bin_checksum"] = "142531f7dcd8049f2c9b24dfee8a73d90e5829f08210b8da94dbf2dd08fe5231"
 default["spark"]["install_dir"] = "/opt/local/spark"
-default["spark"]["mode"] = ["master", "slave"]
-default["spark"]["mem"] = '6g'
 
-default["spark"]["username"] = "spark"
+default["spark"]["user"] = "spark"
 default["spark"]["group"] = "spark"
+
+default["spark"]["env"]["hadoop_conf_dir"] = nil
+default["spark"]["env"]["spark_local_ip"] = nil
+default["spark"]["env"]["spark_public_dns"] = nil
+default["spark"]["env"]["spark_classpath"] = nil
+default["spark"]["env"]["spark_local_ip"] = nil
+default["spark"]["env"]["spark_public_dns"] = nil
+default["spark"]["env"]["spark_classpath"] = nil
+default["spark"]["env"]["spark_local_dirs"] = nil
+default["spark"]["env"]["mesos_native_library"] = nil
+default["spark"]["env"]["hadoop_conf_dir"] = nil
+default["spark"]["env"]["spark_executor_instances"] = nil
+default["spark"]["env"]["spark_executor_cores"] = nil
+default["spark"]["env"]["spark_executor_memory"] = nil
+default["spark"]["env"]["spark_driver_memory"] = nil
+default["spark"]["env"]["spark_yarn_app_name"] = nil
+default["spark"]["env"]["spark_yarn_queue"] = nil
+default["spark"]["env"]["spark_yarn_dist_files"] = nil
+default["spark"]["env"]["spark_yarn_dist_archives"] = nil
+default["spark"]["env"]["spark_master_ip"] = nil
+default["spark"]["env"]["spark_master_port"] = nil
+default["spark"]["env"]["spark_master_opts"] = nil
+default["spark"]["env"]["spark_worker_cores"] = nil
+default["spark"]["env"]["spark_worker_memory"] = nil
+default["spark"]["env"]["spark_worker_port"] = nil
+default["spark"]["env"]["spark_worker_instances"] = nil
+default["spark"]["env"]["spark_worker_dir"] = nil
+default["spark"]["env"]["spark_worker_opts"] = nil
+default["spark"]["env"]["spark_history_opts"] = nil
+default["spark"]["env"]["spark_daemon_java_opts"] = nil
+default["spark"]["env"]["spark_public_dns"] = nil

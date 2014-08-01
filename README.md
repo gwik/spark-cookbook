@@ -23,6 +23,17 @@ Linux platforms
   </tr>
 </table>
 
+## Data bags
+
+put secret file in /var/chef/encrypted_data_bag_secret
+or node['chef']['encrypted_data_bag_secret_path']
+
+spark
+  ssh_key
+    type: "rsa" or "dsa"
+    private_key
+    public_key
+
 ## Usage
 
 ### spark::default
