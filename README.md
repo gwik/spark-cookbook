@@ -1,6 +1,6 @@
 # spark-cookbook
 
-[Chef](http://www.getchef.com/chef/) cookbook [Apache Spark](http://spark.apache.org/) master, and slaves for standalone mode.
+[Chef](http://www.getchef.com/chef/) cookbook to install [Apache Spark](http://spark.apache.org/) master, and slaves for standalone mode.
 
 Spark will be installed and run as <tt>['spark']['user']</tt>, the home directory of that user
 will be the installed path.
@@ -174,7 +174,7 @@ Here is a more concrete example that also configures java and scala :
     "url": "http://www.scala-lang.org/files/archive/scala-2.10.4.tgz"
   },
   "spark": {
-    "slaves": ["ip-172-31-12-140.eu-west-1.compute.internal"]
+    "slaves": ["ip-xxx-xxx-xxx-xxx.eu-west-1.compute.internal"]
   },
   "run_list": [
     "recipe[spark::master]"
