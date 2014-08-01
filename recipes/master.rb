@@ -11,3 +11,19 @@ file "#{spark_path}/.ssh/id_#{key['type']}" do
   owner spark_user
   content key['private_key']
 end
+
+file "#{spark_path}/conf/slaves" do
+  mode "0755"
+  owner spark_user
+  content(node['spark']['slaves'].join("\n") + "\n")
+end
+
+service "spark" do
+  start_command <<-BASH
+    sudo -u '#{spark_user}' -- sh -c 'cd #{spark_path} && ./sbin/start-all.sh'
+  BASH
+  stop_command <<-BASH
+    sudo -u '#{spark_user}' -- sh -c 'cd #{spark_path} && ./sbin/stop-all.sh'
+  BASH
+  action :start
+end
