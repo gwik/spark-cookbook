@@ -1,0 +1,9 @@
+{
+  "id": "data_bag_contents",
+  "content": {
+    "encrypted_data": "Uh4L2+lmrE6zN/wpDIWDBO0WGyYAswhkWlHDnpILMM2O9HbPbSeXr58aywdv\n+Lju\n",
+    "iv": "B3Nz8ShNF2MsMndB/rUOEA==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

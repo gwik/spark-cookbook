@@ -1,5 +1,7 @@
-source "https://supermarket.getchef.com"
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+source "https://berks-api.53.localytics.com"
+source "https://supermarket.chef.io"
 
 metadata
-
-cookbook 'scala', '~> 2.1.0'
