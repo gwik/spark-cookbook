@@ -5,10 +5,10 @@
 Spark will be installed and run as <tt>['spark']['user']</tt>, the home directory of that user
 will be the installed path.
 
-In standalone mode, spark slaves are started from master using ssh
-connections to the slaves. Then, if you add add slaves, add them to
-<tt>['spark']['slaves']</tt>
-and re-run the recipe on master to update the list of slaves.
+In standalone mode, spark workers are started from master using ssh
+connections to the workers. Then, if you add add workers, add them to
+<tt>['spark']['workers']</tt>
+and re-run the recipe on master to update the list of workers.
 
 ## Supported Platforms
 
@@ -23,12 +23,6 @@ your platform.
     <th>Type</th>
     <th>Description</th>
     <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>["chef"]["data_bag_secret_path"]</tt></td>
-    <td>String</td>
-    <td>Path to secret file to decrypt data bag secret.</td>
-    <td><tt>/var/chef/encrypted_data_bag_secret</tt></td>
   </tr>
   <tr>
     <td><tt>["spark"]["master_host"]</tt></td>
@@ -73,9 +67,9 @@ your platform.
     <td><tt>spark</tt></td>
   </tr>
   <tr>
-    <td><tt>["spark"]["slaves"]</tt></td>
+    <td><tt>["spark"]["workers"]</tt></td>
     <td>Array[String]</td>
-    <td>List of hostname of the slaves.
+    <td>List of hostname of the workers.
       You probably want to use private network hostnames or ip addresses.</td>
     <td><tt>[]</tt></td>
   </tr>
@@ -127,26 +121,10 @@ Here are the supported parameters :
     # - SPARK_DAEMON_JAVA_OPTS, to set config properties for all daemons (e.g. "-Dx=y")
     # - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
 
-## Data bags
-
-You must provide an keypair (rsa or dsa) in a databag item :
-
-    spark
-      ssh_key
-        type: "rsa" or "dsa"
-        private_key: the private key
-        public_key: the public key
-
-You can generate a keypair with :
-
-    ssh-keygen -t dsa -f spark_key
-
-Put the content of `spark_key.pub` file in `public_key` and
-`spark_key` file in `private_key` and `dsa` as type.
 
 ## Usage
 
-Include `spark::master` and/or `spark::slave` in your node's `run_list`:
+Include `spark::master` and/or `spark::worker` in your node's `run_list`:
 
 ```json
 {
@@ -174,7 +152,7 @@ Here is a more concrete example that also configures java and scala :
     "url": "http://www.scala-lang.org/files/archive/scala-2.10.4.tgz"
   },
   "spark": {
-    "slaves": ["ip-xxx-xxx-xxx-xxx.eu-west-1.compute.internal"]
+    "workers": ["ip-xxx-xxx-xxx-xxx.eu-west-1.compute.internal"]
   },
   "run_list": [
     "recipe[spark::master]"
@@ -182,21 +160,3 @@ Here is a more concrete example that also configures java and scala :
 }
 ```
 
-## Contributing
-
-1. Fork the repository on Github
-2. Create a named feature branch (i.e. `add-new-recipe`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request
-
-## License and Authors
-
-Copyright (C) 2014 Antonin Amand
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

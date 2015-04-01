@@ -1,19 +1,19 @@
-default["chef"]["data_bag_secret_path"] = "/var/chef/encrypted_data_bag_secret"
+#default["chef"]["data_bag_secret_path"] = "/var/chef/encrypted_data_bag_secret"
 
 default["spark"]["master_host"] = "localhost"
 default["spark"]["master_port"] = "7077"
-default["spark"]["bin_url"] = "http://d3kbcqa49mib13.cloudfront.net/spark-1.0.1-bin-hadoop2.tgz"
+default["spark"]["bin_url"] = "http://d3kbcqa49mib13.cloudfront.net/spark-1.3.0-bin-hadoop1.tgz"
 default["spark"]["bin_checksum"] = "142531f7dcd8049f2c9b24dfee8a73d90e5829f08210b8da94dbf2dd08fe5231"
 default["spark"]["install_dir"] = "/opt/local/spark"
 
 default["spark"]["user"] = "spark"
 default["spark"]["group"] = "spark"
+default["spark"]["workers"] = []
 
 default["spark"]["env"]["hadoop_conf_dir"] = nil
 default["spark"]["env"]["spark_local_ip"] = nil
 default["spark"]["env"]["spark_public_dns"] = nil
 default["spark"]["env"]["spark_classpath"] = nil
-default["spark"]["env"]["spark_local_ip"] = nil
 default["spark"]["env"]["spark_public_dns"] = nil
 default["spark"]["env"]["spark_classpath"] = nil
 default["spark"]["env"]["spark_local_dirs"] = nil
