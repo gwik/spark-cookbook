@@ -43,92 +43,92 @@
 # - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
 
 <%- unless @spark_env['hadoop_conf_dir'].to_s.empty? -%>
-HADOOP_CONF_DIR="<%= spark_env['hadoop_conf_dir'] %>"
+HADOOP_CONF_DIR="<%= @spark_env['hadoop_conf_dir'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_local_ip'].to_s.empty? -%>
-SPARK_LOCAL_IP="<%= spark_env['spark_local_ip'] %>"
+SPARK_LOCAL_IP="<%= @spark_env['spark_local_ip'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_public_dns'].to_s.empty? -%>
-SPARK_PUBLIC_DNS="<%= spark_env['spark_public_dns'] %>"
+SPARK_PUBLIC_DNS="<%= @spark_env['spark_public_dns'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_classpath'].to_s.empty? -%>
-SPARK_CLASSPATH="<%= spark_env['spark_classpath'] %>"
+SPARK_CLASSPATH="<%= @spark_env['spark_classpath'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_local_ip'].to_s.empty? -%>
-SPARK_LOCAL_IP="<%= spark_env['spark_local_ip'] %>"
+SPARK_LOCAL_IP="<%= @spark_env['spark_local_ip'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_public_dns'].to_s.empty? -%>
-SPARK_PUBLIC_DNS="<%= spark_env['spark_public_dns'] %>"
+SPARK_PUBLIC_DNS="<%= @spark_env['spark_public_dns'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_classpath'].to_s.empty? -%>
-SPARK_CLASSPATH="<%= spark_env['spark_classpath'] %>"
+SPARK_CLASSPATH="<%= @spark_env['spark_classpath'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_local_dirs'].to_s.empty? -%>
-SPARK_LOCAL_DIRS="<%= spark_env['spark_local_dirs'] %>"
+SPARK_LOCAL_DIRS="<%= @spark_env['spark_local_dirs'] %>"
 <%- end -%>
 <%- unless @spark_env['mesos_native_library'].to_s.empty? -%>
-MESOS_NATIVE_LIBRARY="<%= spark_env['mesos_native_library'] %>"
+MESOS_NATIVE_LIBRARY="<%= @spark_env['mesos_native_library'] %>"
 <%- end -%>
 <%- unless @spark_env['hadoop_conf_dir'].to_s.empty? -%>
-HADOOP_CONF_DIR="<%= spark_env['hadoop_conf_dir'] %>"
+HADOOP_CONF_DIR="<%= @spark_env['hadoop_conf_dir'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_executor_instances'].to_s.empty? -%>
-SPARK_EXECUTOR_INSTANCES="<%= spark_env['spark_executor_instances'] %>"
+SPARK_EXECUTOR_INSTANCES="<%= @spark_env['spark_executor_instances'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_executor_cores'].to_s.empty? -%>
-SPARK_EXECUTOR_CORES="<%= spark_env['spark_executor_cores'] %>"
+SPARK_EXECUTOR_CORES="<%= @spark_env['spark_executor_cores'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_executor_memory'].to_s.empty? -%>
-SPARK_EXECUTOR_MEMORY="<%= spark_env['spark_executor_memory'] %>"
+SPARK_EXECUTOR_MEMORY="<%= @spark_env['spark_executor_memory'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_driver_memory'].to_s.empty? -%>
-SPARK_DRIVER_MEMORY="<%= spark_env['spark_driver_memory'] %>"
+SPARK_DRIVER_MEMORY="<%= @spark_env['spark_driver_memory'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_yarn_app_name'].to_s.empty? -%>
-SPARK_YARN_APP_NAME="<%= spark_env['spark_yarn_app_name'] %>"
+SPARK_YARN_APP_NAME="<%= @spark_env['spark_yarn_app_name'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_yarn_queue'].to_s.empty? -%>
-SPARK_YARN_QUEUE="<%= spark_env['spark_yarn_queue'] %>"
+SPARK_YARN_QUEUE="<%= @spark_env['spark_yarn_queue'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_yarn_dist_files'].to_s.empty? -%>
-SPARK_YARN_DIST_FILES="<%= spark_env['spark_yarn_dist_files'] %>"
+SPARK_YARN_DIST_FILES="<%= @spark_env['spark_yarn_dist_files'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_yarn_dist_archives'].to_s.empty? -%>
-SPARK_YARN_DIST_ARCHIVES="<%= spark_env['spark_yarn_dist_archives'] %>"
+SPARK_YARN_DIST_ARCHIVES="<%= @spark_env['spark_yarn_dist_archives'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_master_ip'].to_s.empty? -%>
-SPARK_MASTER_IP="<%= spark_env['spark_master_ip'] %>"
+SPARK_MASTER_IP="<%= @spark_env['spark_master_ip'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_master_port'].to_s.empty? -%>
-SPARK_MASTER_PORT="<%= spark_env['spark_master_port'] %>"
+SPARK_MASTER_PORT="<%= @spark_env['spark_master_port'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_master_opts'].to_s.empty? -%>
-SPARK_MASTER_OPTS="<%= spark_env['spark_master_opts'] %>"
+SPARK_MASTER_OPTS="<%= @spark_env['spark_master_opts'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_worker_cores'].to_s.empty? -%>
-SPARK_WORKER_CORES="<%= spark_env['spark_worker_cores'] %>"
+SPARK_WORKER_CORES="<%= @spark_env['spark_worker_cores'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_worker_memory'].to_s.empty? -%>
-SPARK_WORKER_MEMORY="<%= spark_env['spark_worker_memory'] %>"
+SPARK_WORKER_MEMORY="<%= @spark_env['spark_worker_memory'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_worker_port'].to_s.empty? -%>
-SPARK_WORKER_PORT="<%= spark_env['spark_worker_port'] %>"
+SPARK_WORKER_PORT="<%= @spark_env['spark_worker_port'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_worker_instances'].to_s.empty? -%>
-SPARK_WORKER_INSTANCES="<%= spark_env['spark_worker_instances'] %>"
+SPARK_WORKER_INSTANCES="<%= @spark_env['spark_worker_instances'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_worker_dir'].to_s.empty? -%>
-SPARK_WORKER_DIR="<%= spark_env['spark_worker_dir'] %>"
+SPARK_WORKER_DIR="<%= @spark_env['spark_worker_dir'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_worker_opts'].to_s.empty? -%>
-SPARK_WORKER_OPTS="<%= spark_env['spark_worker_opts'] %>"
+SPARK_WORKER_OPTS="<%= @spark_env['spark_worker_opts'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_history_opts'].to_s.empty? -%>
-SPARK_HISTORY_OPTS="<%= spark_env['spark_history_opts'] %>"
+SPARK_HISTORY_OPTS="<%= @spark_env['spark_history_opts'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_daemon_java_opts'].to_s.empty? -%>
-SPARK_DAEMON_JAVA_OPTS="<%= spark_env['spark_daemon_java_opts'] %>"
+SPARK_DAEMON_JAVA_OPTS="<%= @spark_env['spark_daemon_java_opts'] %>"
 <%- end -%>
 <%- unless @spark_env['spark_public_dns'].to_s.empty? -%>
-SPARK_PUBLIC_DNS="<%= spark_env['spark_public_dns'] %>"
+SPARK_PUBLIC_DNS="<%= @spark_env['spark_public_dns'] %>"
 <%- end -%>
